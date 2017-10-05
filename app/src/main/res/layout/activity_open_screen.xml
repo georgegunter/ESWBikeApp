@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.cubikerouting.OpenScreen">
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <Button
+        android:id="@+id/profile_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="View Profile" />
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:id="@+id/center_spacer"
+        android:layout_centerInParent="true"/>
     <TextView
-        android:id="@+id/WelcomeText"
+        android:id="@+id/welcome_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="109dp" />
-
+        android:textSize="50dp"
+        android:layout_above="@id/center_spacer"
+        android:layout_centerHorizontal="true"/>
     <Button
-        android:id="@+id/StartRideButton"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="136dp"
-        android:layout_height="48dp"
-        android:text="Start New Ride"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="231dp" />
-
-    <Button
-        android:id="@+id/ProfileButton"
+        android:id="@+id/start_ride_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Profile"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="5dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/center_spacer"
+        android:text="Start New Ride"/>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
