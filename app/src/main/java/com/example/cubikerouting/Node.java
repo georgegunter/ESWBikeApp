@@ -6,13 +6,28 @@ package com.example.cubikerouting;
 
 import java.util.ArrayList;
 
-public class Node {
-    ArrayList<Edge> adjacent;
-    String cityName;
-    int index;
+import static android.R.attr.name;
 
-    public Node(String name) {
-        cityName = name;
-        adjacent = new ArrayList<>();
+public class Node<data> {
+    ArrayList<Edge> adjacent;
+    data Data;
+    boolean discovered;
+
+    public Node(data newData,ArrayList<Edge> newAdjacent) {
+        Data = newData;
+        adjacent = newAdjacent;
+        discovered = false;
+    }
+
+    public ArrayList<Edge> getAdjacent(){
+        return  adjacent;
+    }
+
+    public void addAdjacent(Edge newAdj){
+        adjacent.add(newAdj);
+    }
+
+    public void setDiscovered(){
+        discovered = true;
     }
 }
