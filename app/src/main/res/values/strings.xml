@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CU Bike Routing</string>
+    <string-array name="places_array">
+        <item>Siebel Center</item>
+        <item>Illini Union</item>
+        <item>Grainger Library</item>
+        <item>Morrow Plots</item>
+    </string-array>
 </resources>
