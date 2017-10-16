@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <AutoCompleteTextView
+        android:id="@+id/origin_input"
+        android:hint="Origin"
+        android:inputType="text"
+        android:maxLines="1"
+        android:layout_margin="2dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/upper_spacer"/>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:id="@+id/upper_spacer"
+        android:layout_centerInParent="true"/>
+    <AutoCompleteTextView
+        android:id="@+id/destination_input"
+        android:hint="Destination"
+        android:inputType="text"
+        android:maxLines="1"
+        android:layout_margin="2dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upper_spacer"/>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:id="@+id/center_spacer"
+        android:layout_below="@id/destination_input"/>
+    <Button
+        android:id="@+id/start_ride_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/center_spacer"
+        android:text="Let's go!"/>
+
+</RelativeLayout>
