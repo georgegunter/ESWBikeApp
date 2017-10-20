@@ -1,17 +1,22 @@
 package com.example.cubikerouting;
 
 import android.content.Context;
+import android.content.Intent;
 import android.preference.PreferenceManager;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+
+import static com.example.cubikerouting.R.id.map;
 
 public class RideActivity extends AppCompatActivity {
 
@@ -22,11 +27,28 @@ public class RideActivity extends AppCompatActivity {
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
         setContentView(R.layout.activity_ride);
 
-        MapView map = (MapView) findViewById(R.id.map);
+        final MapView map = (MapView) findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
+
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
+
+        IMapController mapController = map.getController();
+        mapController.setZoom(15);
+        GeoPoint startPoint = new GeoPoint(40.1164,-88.2434);
+        mapController.setCenter(startPoint);
+
+        FloatingActionButton centerButton = (FloatingActionButton) findViewById(R.id.centerButton);
+
+        centerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
+
+
 
     public void onResume(){
         super.onResume();
