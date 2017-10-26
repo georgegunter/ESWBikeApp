@@ -33,6 +33,8 @@ public class RideActivity extends AppCompatActivity {
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
 
+        map.setTilesScaledToDpi(true);
+
         IMapController mapController = map.getController();
         mapController.setZoom(15);
         GeoPoint startPoint = new GeoPoint(40.1164,-88.2434);
