@@ -15,6 +15,7 @@ public class OpenScreen extends AppCompatActivity {
 
         Button profileButton = (Button) findViewById(R.id.profile_button);
         Button newRideButton = (Button) findViewById(R.id.new_ride_button);
+        Button viewTest = (Button) findViewById(R.id.test_Button);
 
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +29,14 @@ public class OpenScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),PreRideActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        viewTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),TestActivity.class);
                 startActivity(intent);
             }
         });
